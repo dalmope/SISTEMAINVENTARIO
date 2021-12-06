@@ -1,0 +1,25 @@
+<div class="container" style="display: flex; justify-content: center; flex-wrap: wrap; background-color: white; padding: 25px; height: 100%;">
+
+    <div style="width: 60%;">
+        <form [formGroup]="form">
+            <div class="row">
+                <mat-form-field appearance="fill">
+                    <mat-label>ID Proveedor</mat-label>
+                    <input formControlName="id" type="text" matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre</mat-label>
+                    <input formControlName="nombre" type="text" matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <button class="btn btn-success" (click)="actualizar()">Actualizar</button>
+            </div>
+        </form>
+    </div>
+
+</div>

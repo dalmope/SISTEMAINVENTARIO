@@ -1,0 +1,51 @@
+
+<div class="container-fluid">
+    <div class="cajon">
+      <div class="titulo">
+        <h3 class="gestiones">
+          Administración De Empleados
+        </h3>
+      </div>
+  
+      <div style="text-align: right; margin: 0;">
+        <div style="text-align: right; margin: 0;">
+          <a nz-button nzType="primary" routerLink="/administracion/nuevoEmpleado">
+            <i class="fas fa-briefcase"  style="margin-right: 5px;"></i>Agregar Empleado
+          </a>
+        </div>
+      </div>
+  
+      <div class="table">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-striped table bordered row-border hover">
+          <thead class="table-dark">
+            <tr>
+              <th>ID</th>
+              <th>NOMBRE</th>
+              <th>NOMBRE_USUARIO</th>
+              <th>CORREO</th>
+              <th>ROL</th>
+              
+              <th>EDITAR</th>
+            </tr>
+          </thead >
+          <tbody>
+            <tr *ngFor="let usuario of data">
+              <td>{{usuario.id}}</td>
+              <td>{{usuario.nombre}}</td>
+              <td>{{usuario.nombreUsuario}}</td>
+              <td>{{usuario.email}}</td>
+              <td>{{usuario.roles[0].rolNombre}}</td>
+              
+              <td style="text-align: center;">
+                <a [routerLink]="['/administracion/empleado/edit/',usuario.id]" style="color: green;">
+                  <i class="fas fa-edit"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+  
+      </div>
+    </div>
+  </div>

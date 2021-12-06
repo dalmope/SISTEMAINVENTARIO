@@ -1,0 +1,95 @@
+<nz-layout class="app-layout">
+    <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
+      [nzTrigger]="null">
+      <div class="sidebar-logo">
+        <a href="https://ng.ant.design/" target="_blank">
+          <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
+          <h1>Sistema Inventario</h1>
+        </a>
+      </div>
+      <ul nz-menu nzTheme="dark" nzMode="inline">
+       
+        <li nz-menu-item>
+            <i nz-icon nzType="dashboard" nzTheme="outline" style="font-size: 20px"></i>
+            <span>Dashboard</span>
+            <a routerLink="dashboard"></a>
+          </li>
+  
+        <!-- <li nz-menu-item>
+          <i nz-icon nzType="car" nzTheme="outline" style="font-size: 20px"></i>
+          <span>Proveedores</span>
+          <a routerLink="proveedores"></a>
+        </li> -->
+  
+        <li nz-menu-item>
+          <i nz-icon nzType="cluster" nzTheme="outline" style="font-size: 20px"></i>
+          <span>Categorias</span>
+          <a routerLink="categorias"></a>
+        </li>
+  
+        <li nz-menu-item>
+          <i nz-icon nzType="mobile" nzTheme="outline" style="font-size: 20px"></i>
+          <span>Productos</span>
+          <a routerLink="productos"></a>
+        </li>
+  
+        <li nz-menu-item>
+            <i nz-icon nzType="user" nzTheme="outline" style="font-size: 20px"></i>
+            <span>Empleados</span>
+            <a routerLink="empleados"></a>
+          </li>  
+
+          <li nz-menu-item>
+            <i nz-icon nzType="user" nzTheme="outline" style="font-size: 20px"></i>
+            <span>Proveedores</span>
+            <a routerLink="proveedores"></a>
+          </li>  
+
+          <!-- <li nz-menu-item>
+            <i nz-icon nzType="user" nzTheme="outline" style="font-size: 20px"></i>
+            <span>Compras</span>
+            <a routerLink="compras"></a>
+          </li>   -->
+
+
+      </ul>
+  
+    
+    </nz-sider>
+    <nz-layout>
+      <nz-header>
+        <div class="app-header" style="display: flex; justify-content: space-between;">
+          <div>
+  
+            <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+              <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
+            </span>
+          </div>
+  
+          
+          <div class="sesion" style="padding-right: 25px;">
+          
+            <nz-button-group>
+              <button nz-button (click)="log()">{{nombre}}</button>
+              <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzPlacement="bottomRight">
+                <i nz-icon nzType="user"></i>
+              </button>
+            </nz-button-group>
+  
+            <nz-dropdown-menu #menu="nzDropdownMenu">
+              <ul nz-menu>
+                <li nz-menu-item>Editar Perfil</li>
+                <li nz-menu-item (click)="salir()" routerLink="/inicio"><a href=""></a> Cerrar Sesión</li>
+              </ul>
+            </nz-dropdown-menu>
+          </div>
+        </div>
+  
+      </nz-header>
+
+      <div class="contenido" style="width: 100%; height: 100%; overflow: scroll">
+        <router-outlet></router-outlet>
+      </div>
+  
+    </nz-layout>
+  </nz-layout>

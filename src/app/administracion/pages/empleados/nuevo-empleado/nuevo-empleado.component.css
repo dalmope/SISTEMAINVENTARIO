@@ -1,0 +1,19 @@
+.container-fluid{
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+ }
+ .h1{
+     font-weight: bold;
+ }
+ .row{
+     background-color: #fff;
+     padding-bottom: 20px;
+ }
+ .mat-form-field{
+     width: 100%;
+ }
+ 
+ .bot{
+     background-color: #fff;
+ }

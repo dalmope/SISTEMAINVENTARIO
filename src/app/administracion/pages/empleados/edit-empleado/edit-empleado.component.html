@@ -1,0 +1,43 @@
+<div class="container" style="display: flex; justify-content: center; flex-wrap: wrap; background-color: white; padding: 25px; height: 100%;">
+    <div style="width: 60%;">
+    
+    <form [formGroup]="form">
+        <h1 style="text-align: center;">EDITAR EMPLEADOS</h1>
+
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input formControlName="nombre" type="text" matInput>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>id</mat-label>
+                <input formControlName="id" type="text" matInput readonly>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre Usuario</mat-label>
+                    <input formControlName="nombreUsuario" type="text" matInput readonly>
+            </mat-form-field>
+        </div>
+
+        </div>
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>Correo</mat-label>
+                <input formControlName="email" type="email" matInput>
+            </mat-form-field>
+        </div>       
+
+
+        <button [disabled]="form.invalid" class="btn btn-success btn-block" (click)="actualizarEmpleado()">
+            Guardar
+        </button>
+    </form>
+</div>
+</div>
